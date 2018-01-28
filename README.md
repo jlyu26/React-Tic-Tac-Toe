@@ -1,4 +1,8 @@
-# 打井游戏 Notes
+# 打井游戏
+
+<img width="147" alt="tic-tac-toe" src="https://user-images.githubusercontent.com/20265633/35487197-e5427f38-0446-11e8-8b0a-d6f49365f693.PNG">
+
+## Notes
 
 0. create-react-app 的文件结构：`public`文件夹里存放图片和`index.html`等文件。
 
@@ -72,11 +76,31 @@ handleClick(i) {
     this.setState({squares: squares});
 }
 ```
-我们使用了`.slice()`方法来将之前的保存square值的数组数据浅拷贝到了一个新的数组中，而不是修改已有的数组。详细原因[参见教程](https://doc.react-china.org/tutorial/tutorial.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8F%AF%E5%8F%98%E6%80%A7%E5%9C%A8react%E5%BD%93%E4%B8%AD%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81)。
+我们使用了`.slice()`方法来将之前的保存square值的数组数据浅拷贝到了一个新的数组中，而不是修改已有的数组。因为之后要为游戏添加**历史记录**功能。更详细原因[参见教程](https://doc.react-china.org/tutorial/tutorial.html)。
 
 10. 只有render()的组件可以用function-based component。function-based组件里接受父组件的参数不用加`this`，直接用`props.value`，`props.onClick`就可以。function里也没有render,直接return。
 
-11. 
+## More To Add
+
+0. 判断胜负函数calculateWinner()的O(n)写法
+
+
+<img width="229" alt="tic-tac-toe-complete" src="https://user-images.githubusercontent.com/20265633/35487230-3b6cd3a4-0447-11e8-8add-5e764fb76843.PNG">
+
+
+以下功能代码参见[教程](https://codepen.io/discountry/pen/ENrZzV)
+
+1. 每一步的历史记录
+
+2. 以 “(1, 3)” 坐标的方式记录每一步，而不是格子序号 “6”
+
+3. 在棋步记录列表里加粗显示当前选中的项目
+
+4. 在 Board 组件中用两个循环渲染出 9 个 Square 格子组件
+
+5. 添加一个切换按钮来升序或降序显示棋步记录列表
+
+6. 当一方获胜时，高亮显示连成一线的3颗棋子
 
 
 
