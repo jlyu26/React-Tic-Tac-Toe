@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Square extends React.Component {
-  render() {
+function Square(props) {	// function-based component用props传参
     return (
-      <button className="square">
-        {this.props.value}    {/* Square是Board的子组件，通过this.props.value调用Board传递下来的名为value的属性 */}
-      </button>
+        <button className="square" onClick={props.onClick}>
+            {props.value}
+        </button>
     );
-  }
 }
 
 export default Square;
